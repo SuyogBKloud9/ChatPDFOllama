@@ -1,3 +1,18 @@
+import sqlite3
+import sys
+
+try:
+    import chromadb
+except RuntimeError as e:
+    if "unsupported version of sqlite3" in str(e):
+        current_sqlite_version = sqlite3.sqlite_version_info
+        required_sqlite_version = (3, 35, 0)
+        if current_sqlite_version < required_sqlite_version:
+            print("Your SQLite version is not supported. Please upgrade to SQLite version 3.35.0 or higher.")
+            sys.exit(1)
+
+
+
 from langchain_community.vectorstores import Chroma
 from langchain_community.chat_models import ChatOllama
 from langchain_community.embeddings import FastEmbedEmbeddings
