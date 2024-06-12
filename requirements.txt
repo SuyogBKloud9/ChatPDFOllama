@@ -4,3 +4,4 @@ pysqlite3-binary>=0.4.6
 langchain
 chromadb
 langchain-community
+pypdf
