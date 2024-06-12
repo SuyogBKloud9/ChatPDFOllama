@@ -5,3 +5,4 @@ langchain
 chromadb
 langchain-community
 pypdf
+fastembed
